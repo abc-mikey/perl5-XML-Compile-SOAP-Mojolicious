@@ -62,7 +62,7 @@ unless($daemon_pid)
 }
 
 sub stop_daemon()
-{  defined $daemon_pid or return;
+{  $daemon_pid or return;
    ok(1, "Stopping daemon $daemon_pid");
    kill TERM => $daemon_pid;
    sleep(1);
